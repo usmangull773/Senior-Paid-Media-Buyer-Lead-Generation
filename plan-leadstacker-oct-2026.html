@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>30 Day Plan for Leadstacker</title>
+<style>
+:root{--navy:#0b1f36;--card:#12355b;--blue:#0f4c81;--gold:#c8a24a;--lgold:#e3c77f;--bg:#e9eff6;--white:#fff;--red:#b3261e;--green:#1f6f43;--text:#1b2733;--muted:#5a6b7d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+h2{font-size:28px;line-height:1.25;margin-bottom:14px}
+h3{font-size:18px;line-height:1.35;margin-bottom:8px}
+p{margin-bottom:12px}
+strong{font-weight:700}
+.hl{background:rgba(200,162,74,.22);padding:1px 4px;border-radius:3px;font-weight:700}
+.num{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--blue);margin-bottom:8px}
+.dark .num{color:var(--lgold)}
+.lead{font-size:17px;color:var(--muted);max-width:760px}
+/* hero */
+.hero{background:var(--navy);color:#fff;border-bottom:6px solid var(--gold);padding:28px 0 56px}
+.topbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:#b9c6d6;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:40px}
+.label{color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.hero h1{font-size:44px;line-height:1.1;margin-bottom:16px}
+.hero .out{font-size:20px;max-width:760px;color:#dbe4ee;margin-bottom:22px}
+.hero .out b{color:var(--lgold)}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:14px;color:#b9c6d6;margin-bottom:34px}
+.meta span b{color:#fff}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kpi{background:var(--card);border-radius:10px;padding:20px}
+.kpi .v{font-size:34px;font-weight:800;color:var(--lgold);line-height:1.1}
+.kpi .t{font-size:14px;color:#c9d5e2;margin-top:6px}
+/* findings */
+.findings{display:grid;gap:22px;margin-top:30px}
+.fcard{background:#fff;border-radius:10px;padding:26px;box-shadow:0 4px 18px rgba(11,31,54,.08);border-left:6px solid var(--blue)}
+.fcard.med{border-left-color:var(--gold)}
+.fhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px;white-space:nowrap}
+.tag.high{background:var(--blue);color:#fff}
+.tag.medium{background:var(--gold);color:var(--navy)}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #dfe6ee;vertical-align:top}
+thead th{background:var(--navy);color:#fff;font-weight:600}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.cmp div{border-radius:8px;padding:14px 16px;font-size:14px}
+.cmp .bad{background:#fbeceb;border:1px solid #efc7c4}
+.cmp .good{background:#e8f3ec;border:1px solid #bcdcc8}
+.cmp .bad h4{color:var(--red)}
+.cmp .good h4{color:var(--green)}
+.cmp h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.cmp ul{padding-left:18px}
+.cmp li{margin-bottom:4px}
+.flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin-top:16px}
+.node{flex:1 1 120px;background:var(--bg);border:1px solid #cfdae6;border-radius:8px;padding:10px 12px;font-size:13px;text-align:center}
+.node b{display:block;font-size:14px;color:var(--navy)}
+.node.end{background:#e8f3ec;border-color:#bcdcc8}
+.node.end b{color:var(--green)}
+.arrow{align-self:center;color:var(--blue);font-weight:800}
+/* plan */
+.white{background:#fff}
+.timeline{background:var(--navy);border-radius:12px;padding:26px;margin:30px 0 34px;color:#fff}
+.timeline h3{color:#fff;margin-bottom:18px}
+.trow{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;margin-bottom:12px;font-size:14px}
+.track{position:relative;height:30px;background:rgba(255,255,255,.07);border-radius:6px}
+.bar{position:absolute;top:0;height:30px;background:var(--gold);border-radius:6px;color:var(--navy);font-size:12px;font-weight:700;padding:0 10px;display:flex;align-items:center;white-space:nowrap;overflow:hidden}
+.weeks{display:grid;grid-template-columns:150px repeat(4,1fr);gap:0 14px;font-size:12px;color:#b9c6d6;margin-bottom:10px}
+.weeks span:first-child{grid-column:1}
+.steps{display:grid;gap:16px}
+.step{display:grid;grid-template-columns:52px 1fr;gap:16px;background:var(--bg);border-radius:10px;padding:20px}
+.step .n{width:52px;height:52px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center}
+.step .why{font-size:14px;color:var(--muted);margin:0}
+.step .wk{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.08em;text-transform:uppercase}
+/* results */
+.dark{background:var(--navy);color:#fff}
+.dark .lead{color:#c9d5e2}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.rcard{background:var(--card);border-radius:10px;padding:22px}
+.rcard .ind{font-size:12px;color:var(--lgold);letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.rcard .big{font-size:36px;font-weight:800;color:var(--lgold);line-height:1.1;margin:10px 0 4px}
+.rcard .cap{font-size:14px;color:#c9d5e2;margin-bottom:16px}
+.bl{font-size:12px;color:#c9d5e2;margin-bottom:4px;display:flex;justify-content:space-between}
+.btrack{height:14px;background:rgba(255,255,255,.08);border-radius:4px;margin-bottom:12px}
+.bfill{height:14px;border-radius:4px;background:#5d7896}
+.bfill.g{background:var(--gold)}
+.rcard .note{font-size:13px;color:#c9d5e2;border-top:1px solid rgba(255,255,255,.12);padding-top:12px;margin-top:6px}
+/* next */
+.ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.ncard{background:#fff;border-radius:10px;padding:24px;border-top:5px solid var(--gold);box-shadow:0 4px 18px rgba(11,31,54,.06)}
+.ncard .when{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.cta{background:var(--gold);color:var(--navy);text-align:center;padding:48px 0}
+.cta h2{margin-bottom:8px}
+.cta p{font-size:17px;margin:0}
+footer{background:var(--navy);color:#c9d5e2;text-align:center;padding:28px 0;font-size:14px}
+footer b{color:#fff}
+@media (max-width:820px){
+ .kpis,.rgrid,.ngrid{grid-template-columns:1fr}
+ .hero h1{font-size:34px}
+ .cmp{grid-template-columns:1fr}
+ .trow,.weeks{grid-template-columns:1fr}
+ .weeks{display:none}
+ section{padding:48px 0}
+}
+@media (max-width:420px){
+ .wrap{padding:0 16px}
+ .hero h1{font-size:28px}
+ .hero .out{font-size:17px}
+ h2{font-size:23px}
+ .kpi .v,.rcard .big{font-size:28px}
+ .step{grid-template-columns:1fr}
+ .fcard{padding:20px}
+ th,td{padding:8px}
+ table{font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap">
+  <div class="topbar"><span>Senior Paid Media Buyer, Meta, TikTok and Google</span><span>Prepared 8 October 2026</span></div>
+  <div class="label">30 day plan prepared for</div>
+  <h1>Leadstacker</h1>
+  <p class="out">Scale lead volume across Meta, TikTok and Google while every platform learns to bid on <b>qualified calls and sales, not cheap form fills</b>.</p>
+  <div class="meta">
+   <span>Channels: <b>Meta, TikTok, Google</b></span>
+   <span>Focus: <b>high volume lead generation</b></span>
+   <span>Stack: <b>GHL, call center, affiliate offers</b></span>
+  </div>
+  <div class="kpis">
+   <div class="kpi"><div class="v">$15.5M</div><div class="t">ad spend managed across 12 years</div></div>
+   <div class="kpi"><div class="v">977</div><div class="t">campaigns built and managed</div></div>
+   <div class="kpi"><div class="v">30 days</div><div class="t">to a tracked, scalable account structure</div></div>
+  </div>
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <span class="num">01</span>
+  <h2>What we found</h2>
+  <p class="lead">Your brief asks for CPL, CPA, ROAS and lead quality at the same time, across three platforms, feeding a call center and GHL. The gap that usually sits between those goals is simple: <span class="hl">the ad platforms only see the form fill, while the money is made on the qualified call</span>. Fix that signal and scaling gets far safer.</p>
+
+  <div class="findings">
+   <div class="fcard">
+    <div class="fhead"><h3>1. Platforms optimize toward the cheapest lead, not the best one</h3><span class="tag high">High impact</span></div>
+    <p>When Meta, TikTok and Google only receive a lead event, each algorithm finds people who fill forms cheaply. CPL looks fine, the call center sees low contact and low intent, and the buyer or offer partner pushes back on quality.</p>
+    <div class="cmp">
+     <div class="bad"><h4>Signal today (typical)</h4><ul><li>Lead event fires on form submit</li><li>Same weight for junk and qualified leads</li><li>Call outcome stays inside GHL</li><li>Scaling raises volume and lowers quality</li></ul></div>
+     <div class="good"><h4>Signal after week 1</h4><ul><li>Lead, contacted, qualified, sold stages tracked</li><li>Qualified and sold sent back to each platform</li><li>Bidding learns from call center outcomes</li><li>Scaling raises volume at a held quality bar</li></ul></div>
+    </div>
+   </div>
+
+   <div class="fcard">
+    <div class="fhead"><h3>2. GHL and call outcomes are the missing attribution layer</h3><span class="tag high">High impact</span></div>
+    <p>The data to fix this already exists in GHL. It needs to flow back to the platforms through server side events, with click IDs captured on every lead so outcomes match to the ad that produced them.</p>
+    <div class="flow">
+     <div class="node"><b>Ad click</b>fbclid, ttclid, gclid captured</div><span class="arrow">&rarr;</span>
+     <div class="node"><b>Landing page</b>IDs stored in hidden fields</div><span class="arrow">&rarr;</span>
+     <div class="node"><b>GHL pipeline</b>stage changes on call outcome</div><span class="arrow">&rarr;</span>
+     <div class="node end"><b>Back to platforms</b>Meta CAPI, TikTok Events API, Google offline conversions</div>
+    </div>
+   </div>
+
+   <div class="fcard med">
+    <div class="fhead"><h3>3. Testing needs a fixed cadence and kill rules</h3><span class="tag medium">Medium impact</span></div>
+    <p>Audiences, creatives, offers and landing pages all need testing, but testing four things at once on three platforms burns budget without a clear read. A fixed weekly cadence with written kill and scale rules keeps tests clean and decisions fast.</p>
+    <table>
+     <thead><tr><th>Test lane</th><th>Cadence</th><th>Kill rule</th><th>Scale rule</th></tr></thead>
+     <tbody>
+      <tr><td>Creative (hooks, formats)</td><td>New batch weekly</td><td>2x target CPL with no qualified lead</td><td>Below target cost per qualified lead for 3 days</td></tr>
+      <tr><td>Audiences</td><td>Every 2 weeks</td><td>Contact rate below account average</td><td>Qualified rate above average</td></tr>
+      <tr><td>Offer and landing page</td><td>One split test live</td><td>Lower qualified rate at equal traffic</td><td>Winner takes all traffic</td></tr>
+      <tr><td>Budget</td><td>Every 72 hours</td><td>Cost per qualified lead over ceiling</td><td>Step up 20% at a time</td></tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="white">
+ <div class="wrap">
+  <span class="num">02</span>
+  <h2>The 30 day plan</h2>
+  <p class="lead">Tracking first, structure second, scale last. Each week ends with a written report showing <span class="hl">cost per qualified lead by platform, campaign and creative</span>.</p>
+
+  <div class="timeline">
+   <h3>Week by week</h3>
+   <div class="weeks"><span></span><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div>
+   <div class="trow"><span>Audit and tracking</span><div class="track"><div class="bar" style="left:0;width:30%">Audit, CAPI, offline</div></div></div>
+   <div class="trow"><span>Account structure</span><div class="track"><div class="bar" style="left:20%;width:35%">Rebuild by offer</div></div></div>
+   <div class="trow"><span>Creative testing</span><div class="track"><div class="bar" style="left:25%;width:75%">Weekly creative batches</div></div></div>
+   <div class="trow"><span>Bid on qualified</span><div class="track"><div class="bar" style="left:50%;width:50%">Optimize to qualified</div></div></div>
+   <div class="trow"><span>Scale winners</span><div class="track"><div class="bar" style="left:72%;width:28%">Scale 20% steps</div></div></div>
+  </div>
+
+  <div class="steps">
+   <div class="step"><div class="n">1</div><div><div class="wk">Week 1</div><h3>Audit all three ad accounts and the GHL pipeline</h3><p class="why">Find where spend goes today, which campaigns produce qualified calls, and where the tracking breaks.</p></div></div>
+   <div class="step"><div class="n">2</div><div><div class="wk">Week 1 to 2</div><h3>Send call center outcomes back to Meta, TikTok and Google</h3><p class="why">Click IDs on every lead plus server side events from GHL stages, so bidding learns from qualified and sold leads.</p></div></div>
+   <div class="step"><div class="n">3</div><div><div class="wk">Week 2</div><h3>Rebuild campaign structure by offer and intent</h3><p class="why">Each offer gets its own budget, cost per qualified lead ceiling and reporting line, so winners are visible fast.</p></div></div>
+   <div class="step"><div class="n">4</div><div><div class="wk">Week 2 to 4</div><h3>Run weekly creative and audience tests with written kill rules</h3><p class="why">Clean tests give clear reads, and the creative team gets a brief based on what is converting to calls.</p></div></div>
+   <div class="step"><div class="n">5</div><div><div class="wk">Week 3 to 4</div><h3>Scale proven campaigns in 20% budget steps</h3><p class="why">Step increases every 72 hours protect the learning phase and keep cost per qualified lead under its ceiling.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="dark">
+ <div class="wrap">
+  <span class="num">03</span>
+  <h2>Comparable results</h2>
+  <p class="lead">Live accounts where the same levers were used: tracking rebuilt around real outcomes, budget moved to what converts, calls treated as the main conversion.</p>
+
+  <div class="rgrid">
+   <div class="rcard">
+    <div class="ind">Cosmetic surgery clinic, USD</div>
+    <div class="big">+140%</div>
+    <div class="cap">confirmed bookings, 5 to 12, on level ad spend</div>
+    <div class="bl"><span>Cost per conversion before</span><span>$99.97</span></div>
+    <div class="btrack"><div class="bfill" style="width:100%"></div></div>
+    <div class="bl"><span>Cost per conversion after</span><span>$46.15</span></div>
+    <div class="btrack"><div class="bfill g" style="width:46%"></div></div>
+    <div class="note">Offline conversion uploads re-established and micro conversions reclassified so bidding optimized toward confirmed bookings.</div>
+   </div>
+
+   <div class="rcard">
+    <div class="ind">Phone led lead generation</div>
+    <div class="big">254 calls</div>
+    <div class="cap">in one month, up from 175, with a 94.5% answer rate</div>
+    <div class="bl"><span>Leads before</span><span>104</span></div>
+    <div class="btrack"><div class="bfill" style="width:67%"></div></div>
+    <div class="bl"><span>Leads after</span><span>156</span></div>
+    <div class="btrack"><div class="bfill g" style="width:100%"></div></div>
+    <div class="note">Leads up 50% month over month while cost per lead fell 16%. Full call tracking reconciliation, budget concentrated on the highest converting ad groups.</div>
+   </div>
+
+   <div class="rcard">
+    <div class="ind">Specialist clinic, flat spend</div>
+    <div class="big">-33% CPL</div>
+    <div class="cap">while conversions rose 50% and phone calls 71%</div>
+    <div class="bl"><span>Phone calls before</span><span>75</span></div>
+    <div class="btrack"><div class="bfill" style="width:59%"></div></div>
+    <div class="bl"><span>Phone calls after</span><span>128</span></div>
+    <div class="btrack"><div class="bfill g" style="width:100%"></div></div>
+    <div class="note">Calls over 1 minute more than doubled, 23 to 49. Search terms tightened and budget moved to the strongest ad groups.</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <span class="num">04</span>
+  <h2>What happens next</h2>
+  <div class="ngrid">
+   <div class="ncard"><div class="when">Step 1</div><h3>15 minute call</h3><p>Walk through current offers, spend per platform, call center flow and the quality bar your buyers expect.</p></div>
+   <div class="ncard"><div class="when">Step 2</div><h3>Access</h3><p>View access to Meta, TikTok and Google ad accounts plus GHL. Nothing changes in the accounts during the audit.</p></div>
+   <div class="ncard"><div class="when">Step 3</div><h3>First week</h3><p>Written audit with the top fixes ranked by spend impact, and the tracking build started on the highest volume offer.</p></div>
+  </div>
+ </div>
+</section>
+
+<div class="cta">
+ <div class="wrap">
+  <h2>Let's have a quick call</h2>
+  <p>Reply to my message with a time that suits you.</p>
+ </div>
+</div>
+
+<footer>
+ <div class="wrap"><b>Usman Gull</b>, Google Ads and SEO Specialist</div>
+</footer>
+
+</body>
+</html>
